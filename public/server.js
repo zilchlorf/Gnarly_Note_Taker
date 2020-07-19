@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 
+
 // BodyParser makes it easy for our server to interpret data sent to it.
 // The code below is pretty standard.
 app.use(bodyParser.json());
@@ -20,8 +21,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs. 
 // ================================================================================
 
-require('../routes/apiRoutes')(app);
-require('../routes/htmlRoutes')(app);
+require('../routes/apiRoutes.js')(app);
+require('../routes/htmlRoutes.js')(app);
 
 // LISTENER
 app.listen(PORT, function () {
