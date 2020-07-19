@@ -8,10 +8,24 @@
 
 const store = require('../db/db.json');
 
+
 module.exports = function (app) {
     app.get('/api/notes', function (req, res) {
         fs.readfile(__dirname + store);
         res.json(store);
     });
+    app.post('/api/notes', function (req, res) {
+        console.log(req.body);
+        //store = store.push(req.body.whatever)
+        //fs.writeFile-node docs
+    });
+    app.delete('/api/notes/:id', function (req, res) {
+        for (i = 0; i < store.length; i++) {
+            if (store[i].id == req.params.id) {
+                store = store.splice(i, i);
+            }
+        }
+
+    })
 
 }
