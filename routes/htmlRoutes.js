@@ -1,20 +1,14 @@
-// * The following HTML routes should be created:
+var path = require("path");
+var router = require("express").Router();
 
-//   * GET `/notes` - Should return the `notes.html` file.
+// "/notes" responds with the notes.html file
+router.get("/notes", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/notes.html"));
+});
 
-//   * GET `*` - Should return the `index.html` file
+// All other routes respond with the index.html file
+router.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
 
-// * The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
-
-var path = require('path');
-
-module.exports = function (app) {
-    app.get('/notes', function(req, res){
-		res.sendFile(path.join(__dirname + '/../public/notes.html'));
-    });
-
-    app.get('*', function(req, res){
-		res.sendFile(path.join(__dirname + '/../public/index.html'));
-    });
-    
-}
+module.exports = router;
