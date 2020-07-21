@@ -12,6 +12,7 @@ Table of Contents:
 - [tests](#tests)
 - [Questions](#Questions)
 
+![image](https://user-images.githubusercontent.com/63215148/88018066-cfbadd00-cadb-11ea-9633-9b7004d4d04f.png)
 
 # Project_Description:
 Create an application that can be used to write, save, and delete notes. 
